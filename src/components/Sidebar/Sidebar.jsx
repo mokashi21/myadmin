@@ -12,12 +12,18 @@ import WebStoriesIcon from "@mui/icons-material/WebStories";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
+// import {Person2OutlinedIcon, LocalShippingIcon} from "@mui/icons-material"
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">Admin</span>
+      <Link to="/" style={{
+        textDecoration : "none"
+      }} >
+      <span className="logo">Admin</span>
+      </Link>
       </div>
       <hr />
       <div className="center">
@@ -28,14 +34,18 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           <p className="title">LIST</p>
+          <Link to="/users" style={{ textDecoration : "none" }} >
           <li>
             <Person2OutlinedIcon className="icon" />
             <span>Users</span>
           </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration : "none" }} >
           <li>
             <Inventory2OutlinedIcon className="icon" />
             <span>Products</span>
           </li>
+          </Link>
           <li>
             <CardTravelIcon className="icon" />
             <span>Orders</span>
